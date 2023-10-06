@@ -3,20 +3,24 @@ import React, { useState } from "react";
 function App() {
   const [tasks, setTasks] = useState([]);
   const [isActive, setIsActive] = useState([]);
-  var temp;
+  const [changeInputs,setInput] = useState("");
 
   function taskInput(event) {
-    temp = event.target.value;
+    setInput(event.target.value);
   }
 
   function addTask() {
     setTasks((prev) => {
-      return [...prev, temp];
+      return [...prev, changeInputs];
     });
+     
 
     setIsActive((prev) => {
       return [...prev, false];
     });
+
+    setInput("");
+
   }
 
   function deleteTask(index) {
@@ -34,7 +38,7 @@ function App() {
         <h3 className="subtitle">Add your tasks</h3>
       </div>
       <div className="container">
-        <input onChange={taskInput} type="text" id="tasks" placeholder="Enter your tasks" />
+        <input onChange={taskInput} type="text" id="tasks" placeholder="Enter your tasks"  value={changeInputs}/>
         <button onClick={addTask} type="submit">
           +
         </button>
