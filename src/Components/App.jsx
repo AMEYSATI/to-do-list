@@ -30,7 +30,6 @@ function App() {
       return newState;
     });
   }
-
   return (
     <div>
       <div>
