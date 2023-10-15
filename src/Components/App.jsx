@@ -21,16 +21,14 @@ function App() {
     setInput("");
   }
 
-  function doneTask(index) {
-    setIsActive((prev) => {
-      const newState = [...prev];
-      newState[index] = !newState[index];
-      return newState;
-    });
+  function toggleTask(index) {
+    const newActive = [...isActive];
+    newActive[index] = !newActive[index];
+    setIsActive(newActive);
   }
 
   function deleteTask(index) {
-    const updatedTasks = tasks.filter((task, i) => i !== index);
+    const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   }
 
@@ -56,12 +54,16 @@ function App() {
         <ul>
           {tasks.map((task, index) => (
             <li key={index}>
-              <span style={{ textDecoration: isActive[index] ? "line-through" : "none" }}
-              onClick={() => doneTask(index)}>
-                 {task}
+              <span
+                onClick={() => toggleTask(index)}
+                style={{
+                  textDecoration: isActive[index] ? "line-through" : "none"
+                }}
+              >
+                {task}
               </span>
               <button onClick={() => deleteTask(index)} className="delete">
-                D
+                Delete
               </button>
             </li>
           ))}
