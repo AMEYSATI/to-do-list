@@ -56,19 +56,28 @@ body{
     background-size: 100% 2px, 100% 1px;
   }
 
-  button[type=submit] {
-	appearance: none;
-	border: .2em solid #E91E63;
-	background: hsl(0 0 0/0);
-	padding: .85em 1.5em;
-	color: #E91E63;
-	border-radius: 2em;
-	transition: 1s;
-	&:hover, &:focus, &:active {
-		background: #E91E63;
-		color: #fff;
-	}
+  /* Your existing CSS */
+.delete {
+    margin-left: 100px; /* Adjust this value as needed */
+    /* Your other styles for the delete button */
 }
+
+button[type=submit] {
+    border: .2em solid #E91E63;
+    background: hsl(0 0 0/0);
+    padding: .85em 1.5em;
+    color: #E91E63;
+    border-radius: 2em;
+    transition: 1s;
+}
+
+button[type=submit]:hover, 
+button[type=submit]:focus, 
+button[type=submit]:active {
+    background: #E91E63;
+    color: #fff;
+}
+
 
 li{
     font-family: 'Caveat', cursive;
@@ -76,4 +85,3 @@ li{
     font-weight: lighter;
     color: blue;
 }
-  

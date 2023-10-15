@@ -51,8 +51,9 @@ function App() {
               onClick={() => deleteTask(index)}
               key={index}
             >
-              {task}
+              {task}<button className="delete" type="submit">D</button>
             </li>
+            
           ))}
         </ul>
       </div>
