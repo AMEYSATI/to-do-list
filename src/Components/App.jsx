@@ -30,7 +30,6 @@ function App() {
       return newState;
     });
   }
-
   return (
     <div>
       <div>
@@ -60,5 +59,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
